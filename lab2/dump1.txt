@@ -1,0 +1,36 @@
+000011ad <main>:
+    11ad:	b9 00 00 00 00       	mov    $0x0,%ecx
+    11b2:	bb 29 40 00 00       	mov    $0x4029,%ebx
+    11b7:	8b 03                	mov    (%ebx),%eax
+    11b9:	eb 11                	jmp    11cc <bound>
+
+000011bb <start>:
+    11bb:	83 3b 00             	cmpl   $0x0,(%ebx)
+    11be:	7f 05                	jg     11c5 <ok>
+    11c0:	f7 13                	notl   (%ebx)
+    11c2:	83 03 01             	addl   $0x1,(%ebx)
+
+000011c5 <ok>:
+    11c5:	03 0b                	add    (%ebx),%ecx
+    11c7:	83 c3 04             	add    $0x4,%ebx
+    11ca:	8b 03                	mov    (%ebx),%eax
+
+000011cc <bound>:
+    11cc:	81 fb 51 40 00 00    	cmp    $0x4051,%ebx
+    11d2:	75 e7                	jne    11bb <start>
+    11d4:	51                   	push   %ecx
+    11d5:	68 08 40 00 00       	push   $0x4008
+    11da:	e8 fc ff ff ff       	call   11db <bound+0xf>
+    11df:	83 c4 08             	add    $0x8,%esp
+    11e2:	b9 00 00 00 00       	mov    $0x0,%ecx
+    11e7:	bb 00 00 00 00       	mov    $0x0,%ebx
+    11ec:	b8 00 00 00 00       	mov    $0x0,%eax
+    11f1:	c3                   	ret    
+    11f2:	66 90                	xchg   %ax,%ax
+    11f4:	66 90                	xchg   %ax,%ax
+    11f6:	66 90                	xchg   %ax,%ax
+    11f8:	66 90                	xchg   %ax,%ax
+    11fa:	66 90                	xchg   %ax,%ax
+    11fc:	66 90                	xchg   %ax,%ax
+    11fe:	66 90                	xchg   %ax,%ax
+

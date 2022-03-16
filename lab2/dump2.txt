@@ -1,0 +1,64 @@
+0000000000001169 <main>:
+    1169:	f3 0f 1e fa          	endbr64 
+    116d:	55                   	push   %rbp
+    116e:	48 89 e5             	mov    %rsp,%rbp
+    1171:	48 83 ec 40          	sub    $0x40,%rsp
+    1175:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    117c:	00 00 
+    117e:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    1182:	31 c0                	xor    %eax,%eax
+    1184:	c7 45 d0 0a 00 00 00 	movl   $0xa,-0x30(%rbp)
+    118b:	c7 45 d4 f4 ff ff ff 	movl   $0xfffffff4,-0x2c(%rbp)
+    1192:	c7 45 d8 02 00 00 00 	movl   $0x2,-0x28(%rbp)
+    1199:	c7 45 dc 07 00 00 00 	movl   $0x7,-0x24(%rbp)
+    11a0:	c7 45 e0 03 00 00 00 	movl   $0x3,-0x20(%rbp)
+    11a7:	c7 45 e4 d4 ff ff ff 	movl   $0xffffffd4,-0x1c(%rbp)
+    11ae:	c7 45 e8 96 00 00 00 	movl   $0x96,-0x18(%rbp)
+    11b5:	c7 45 ec 08 00 00 00 	movl   $0x8,-0x14(%rbp)
+    11bc:	c7 45 f0 f7 ff ff ff 	movl   $0xfffffff7,-0x10(%rbp)
+    11c3:	c7 45 f4 11 00 00 00 	movl   $0x11,-0xc(%rbp)
+    11ca:	c7 45 c8 00 00 00 00 	movl   $0x0,-0x38(%rbp)
+    11d1:	c7 45 cc 00 00 00 00 	movl   $0x0,-0x34(%rbp)
+    11d8:	eb 41                	jmp    121b <main+0xb2>
+    11da:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    11dd:	48 98                	cltq   
+    11df:	8b 44 85 d0          	mov    -0x30(%rbp,%rax,4),%eax
+    11e3:	85 c0                	test   %eax,%eax
+    11e5:	7e 0e                	jle    11f5 <main+0x8c>
+    11e7:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    11ea:	48 98                	cltq   
+    11ec:	8b 44 85 d0          	mov    -0x30(%rbp,%rax,4),%eax
+    11f0:	01 45 c8             	add    %eax,-0x38(%rbp)
+    11f3:	eb 22                	jmp    1217 <main+0xae>
+    11f5:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    11f8:	48 98                	cltq   
+    11fa:	8b 44 85 d0          	mov    -0x30(%rbp,%rax,4),%eax
+    11fe:	f7 d8                	neg    %eax
+    1200:	89 c2                	mov    %eax,%edx
+    1202:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    1205:	48 98                	cltq   
+    1207:	89 54 85 d0          	mov    %edx,-0x30(%rbp,%rax,4)
+    120b:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    120e:	48 98                	cltq   
+    1210:	8b 44 85 d0          	mov    -0x30(%rbp,%rax,4),%eax
+    1214:	01 45 c8             	add    %eax,-0x38(%rbp)
+    1217:	83 45 cc 01          	addl   $0x1,-0x34(%rbp)
+    121b:	83 7d cc 09          	cmpl   $0x9,-0x34(%rbp)
+    121f:	7e b9                	jle    11da <main+0x71>
+    1221:	8b 45 c8             	mov    -0x38(%rbp),%eax
+    1224:	89 c6                	mov    %eax,%esi
+    1226:	48 8d 3d db 0d 00 00 	lea    0xddb(%rip),%rdi        # 2008 <_IO_stdin_used+0x8>
+    122d:	b8 00 00 00 00       	mov    $0x0,%eax
+    1232:	e8 39 fe ff ff       	callq  1070 <printf@plt>
+    1237:	b8 00 00 00 00       	mov    $0x0,%eax
+    123c:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+    1240:	64 48 33 0c 25 28 00 	xor    %fs:0x28,%rcx
+    1247:	00 00 
+    1249:	74 05                	je     1250 <main+0xe7>
+    124b:	e8 10 fe ff ff       	callq  1060 <__stack_chk_fail@plt>
+    1250:	c9                   	leaveq 
+    1251:	c3                   	retq   
+    1252:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1259:	00 00 00 
+    125c:	0f 1f 40 00          	nopl   0x0(%rax)
+
